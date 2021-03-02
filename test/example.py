@@ -17,10 +17,6 @@ class Example():
         """Turn string into lower case letters."""
         self.string = string.lower()
 
-    def delay(self, duration):
-        """Update timestamp, then delay duration seconds before returning."""
+    def stamp_timestamp(self):
+        """Update timestamp."""
         self.timestamp = time.time()
-        wait = 0.0
-        while (wait < duration):
-            time.sleep(0.1)
-            wait += 0.1

@@ -29,18 +29,9 @@ class TestAdapter(unittest.TestCase):
         self.test_example.example.lowercase("hEllO")
         assert self.test_example.example.string == "hello"
 
-    # def test_adapter_get_fp_adapter(self):
-    #     """Test that a call to the detector adapter's GET method returns the correct response."""
-    #     # Hack: Initialise adapters in adapter.py
-    #     self.test_adapter.adapter.adapters = self.test_adapter.adapters
-
-    #     expected_response = {
-    #         'frames_written': 0,
-    #         'frames_processed': 0,
-    #         'writing': True
-    #     }
-    #     response = self.test_adapter.adapter.get(
-    #         "fp/",
-    #         self.test_adapter.request)
-    #     assert response.status_code == 200
-    #     assert expected_response == response.data['value'][0]['hdf']
+    def test_example_delay(self):
+        """Test function timestamps member viable then waits delay seconds."""
+        current_timestamp = time.time()
+        self.test_example.example.stamp_timestamp()
+        example_timestamp = self.test_example.example.timestamp()
+        assert pytest.approx(example_timestamp) == current_timestamp
