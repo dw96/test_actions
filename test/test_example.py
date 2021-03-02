@@ -33,5 +33,5 @@ class TestAdapter(unittest.TestCase):
         """Test function timestamps member viable then waits delay seconds."""
         current_timestamp = time.time()
         self.test_example.example.stamp_timestamp()
-        example_timestamp = self.test_example.example.timestamp()
+        example_timestamp = self.test_example.example.timestamp
         assert pytest.approx(example_timestamp) == current_timestamp
